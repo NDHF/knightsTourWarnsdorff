@@ -1,0 +1,115 @@
+div#container {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+div#chessboardContainer {
+    order: 1;
+}
+
+div#instructionsAndLauncher {
+    order: 2;
+}
+
+div#instructionsAndLauncher h1 {
+    text-align: center;
+}
+
+div.pieceLockedDown {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: xx-large;
+}
+
+/* DESKTOP */
+
+@media only screen and (orientation: LANDSCAPE) and (min-width: 1201px) {
+    div#container {
+        flex-direction: row-reverse;
+    }
+    div#instructionsAndLauncher {
+        width: 40%;
+    }
+    div#chessboardContainer {
+        width: 40%;
+    }
+    div#chessboard {
+        width: 25vw;
+        height: 25vw;
+    }
+}
+
+/* MOBILE, PORTRAIT */
+
+@media only screen and (orientation: PORTRAIT) {
+    div#container {
+        flex-direction: column;
+    }
+    div#chessboardContainer {
+        width: 100%;
+    }
+    div#chessboard {
+        width: 90vw;
+        height: 90vw;
+    }
+}
+
+/* MOBILE, LANDSCAPE */
+
+@media only screen and (orientation: LANDSCAPE) and (max-width: 1200px) {
+    div#container {
+        flex-direction: row-reverse;
+    }
+    div#chessboard {
+        width: 90vw;
+        height: 90vw;
+    }
+}
+
+div#chessboard {
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div.chessRow {
+    height: 12.5%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+div.chessPiece {
+    width: 100%;
+    height: 100%;
+}
+
+div.chessPiece:not(.pieceLockedDown) span {
+    display: none;
+}
+
+div.chessPiece:not(.pieceLockedDown):hover span {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: xx-large;
+}
+
+div.chessCell {
+    height: 100%;
+    width: 12.5%;
+}
+
+div.white {
+    background-color: white;
+}
+
+div.black {
+    background-color: goldenrod;
+}
